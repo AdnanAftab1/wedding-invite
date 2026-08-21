@@ -12,384 +12,39 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Alex+Brush&amp;family=Jost:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/0ubrz29dpqjgl.css">
-  <link rel="stylesheet" href="css/temp2_fixed.css">
-  <link rel="stylesheet" href="css/2h0cvub02ooc-.css">
-  <link rel="stylesheet" href="css/temp1_fixed.css">
-  <link rel="stylesheet" href="css/temp3_fixed.css">
-  <style>
-    /* Keep existing custom styles */
-    .tmpl-sage-welcome .hero__scroll-arrow {
-      width: 38px;
-      height: 38px;
-      color: var(--rose-deep);
-      background: #fdfbf39e;
-      border: 1.5px solid #2f6b4f59;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      animation: 2.2s ease-in-out infinite sageScrollBob;
-      display: flex;
-    }
-
-    .disappearing_box{
-      scale:0;
-      animation: 2s ease-in-out disappear;
-    }
-
-    @keyframes disappear {
-      from {
-        scale: 1;
-      }
-
-      to {
-        scale: 0;
-      }
-    }
-
-    /* Fade-in animation utilities - initially hidden */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .animate-fade-in-up {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    .animate-fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .animate-delay-1 {
-      animation-delay: 0.2s;
-    }
-
-    .animate-delay-2 {
-      animation-delay: 0.4s;
-    }
-
-    .animate-delay-3 {
-      animation-delay: 0.6s;
-    }
-
-    .animate-delay-4 {
-      animation-delay: 0.8s;
-    }
-
-    .animate-delay-5 {
-      animation-delay: 1s;
-    }
-
-    .animate-delay-6 {
-      animation-delay: 1.2s;
-    }
-
-    /* Pause animation until element is in view */
-    .animate-fade-in-up,
-    .animate-fade-in {
-      animation-play-state: paused;
-    }
-
-    .animate-fade-in-up.animate-visible,
-    .animate-fade-in.animate-visible {
-      animation-play-state: running;
-    }
-
-    .container {
-      left: 50%;
-      margin: auto -50px;
-      position: absolute;
-      top: 50%;
-    }
-
-    .swing div {
-      border-radius: 50%;
-      float: left;
-      height: 1em;
-      width: 1em;
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* Left side – dark green to medium green */
-    .swing div:nth-of-type(1) {
-      background: #123524;
-      transition: background 0.5s ease-in-out;
-    }
-
-    .swing div:nth-of-type(2) {
-      background: #1a4d2e;
-      transition: background 0.5s ease-in-out;
-    }
-
-    .swing div:nth-of-type(3) {
-      background: #2d6a4f;
-      transition: background 0.5s ease-in-out;
-    }
-
-    /* Middle ball – bridging color */
-    .swing div:nth-of-type(4) {
-      background: #6b8f5e;
-      transition: background 0.5s ease-in-out;
-    }
-
-    /* Right side – gold to light gold */
-    .swing div:nth-of-type(5) {
-      background: #c9a15a;
-      transition: background 0.5s ease-in-out;
-    }
-
-    .swing div:nth-of-type(6) {
-      background: #dbb87a;
-      transition: background 0.5s ease-in-out;
-    }
-
-    .swing div:nth-of-type(7) {
-      background: #e4cd9c;
-      transition: background 0.5s ease-in-out;
-    }
-
-    /* Hover effect for smooth color transition */
-    .swing:hover div:nth-of-type(1) {
-      background: #e4cd9c;
-    }
-
-    .swing:hover div:nth-of-type(2) {
-      background: #dbb87a;
-    }
-
-    .swing:hover div:nth-of-type(3) {
-      background: #c9a15a;
-    }
-
-    .swing:hover div:nth-of-type(4) {
-      background: #6b8f5e;
-    }
-
-    .swing:hover div:nth-of-type(5) {
-      background: #2d6a4f;
-    }
-
-    .swing:hover div:nth-of-type(6) {
-      background: #1a4d2e;
-    }
-
-    .swing:hover div:nth-of-type(7) {
-      background: #123524;
-    }
-
-    /* Shadow colors matching the balls */
-    .shadow {
-      clear: left;
-      padding-top: 1.5em;
-    }
-
-    .shadow div {
-      -webkit-filter: blur(1px);
-      filter: blur(1px);
-      float: left;
-      width: 1em;
-      height: .25em;
-      border-radius: 50%;
-      background: #e3dbd2;
-      transition: background 0.5s ease-in-out;
-    }
-
-    .shadow .shadow-l {
-      background: #123524;
-    }
-
-    .shadow .shadow-r {
-      background: #e4cd9c;
-    }
-
-    /* Shadow hover effect */
-    .swing:hover~.shadow .shadow-l {
-      background: #e4cd9c;
-    }
-
-    .swing:hover~.shadow .shadow-r {
-      background: #123524;
-    }
-
-    /* Keyframes – smooth animation timing */
-    @-webkit-keyframes ball-l53 {
-
-      0%,
-      50% {
-        -webkit-transform: rotate(0) translateX(0);
-        transform: rotate(0) translateX(0);
-      }
-
-      100% {
-        -webkit-transform: rotate(50deg) translateX(-2.5em);
-        transform: rotate(50deg) translateX(-2.5em);
-      }
-    }
-
-    @keyframes ball-l53 {
-
-      0%,
-      50% {
-        -webkit-transform: rotate(0) translate(0);
-        transform: rotate(0) translateX(0);
-      }
-
-      100% {
-        -webkit-transform: rotate(50deg) translateX(-2.5em);
-        transform: rotate(50deg) translateX(-2.5em);
-      }
-    }
-
-    @-webkit-keyframes ball-r53 {
-      0% {
-        -webkit-transform: rotate(-50deg) translateX(2.5em);
-        transform: rotate(-50deg) translateX(2.5em);
-      }
-
-      50%,
-      100% {
-        -webkit-transform: rotate(0) translateX(0);
-        transform: rotate(0) translateX(0);
-      }
-    }
-
-    @keyframes ball-r53 {
-      0% {
-        -webkit-transform: rotate(-50deg) translateX(2.5em);
-        transform: rotate(-50deg) translateX(2.5em);
-      }
-
-      50%,
-      100% {
-        -webkit-transform: rotate(0) translateX(0);
-        transform: rotate(0) translateX(0);
-      }
-    }
-
-    @-webkit-keyframes shadow-l-n53 {
-
-      0%,
-      50% {
-        opacity: .5;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-
-      100% {
-        opacity: .125;
-        -webkit-transform: translateX(-1.57em);
-        transform: translateX(-1.75em);
-      }
-    }
-
-    @keyframes shadow-l-n53 {
-
-      0%,
-      50% {
-        opacity: .5;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-
-      100% {
-        opacity: .125;
-        -webkit-transform: translateX(-1.75);
-        transform: translateX(-1.75em);
-      }
-    }
-
-    @-webkit-keyframes shadow-r-n53 {
-      0% {
-        opacity: .125;
-        -webkit-transform: translateX(1.75em);
-        transform: translateX(1.75em);
-      }
-
-      50%,
-      100% {
-        opacity: .5;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-    }
-
-    /* layer utitlity error the shadow part */
-    @keyframes shadow-r-n53 {
-      0% {
-        opacity: .125;
-        -webkit-transform: translateX(1.75em);
-        transform: translateX(1.75em);
-      }
-
-      50%,
-      100% {
-        opacity: .5;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-    }
-
-    .swing-l {
-      -webkit-animation: ball-l53 .425s ease-in-out infinite alternate;
-      animation: ball-l53 .425s ease-in-out infinite alternate;
-    }
-
-    .swing-r {
-      -webkit-animation: ball-r53 .425s ease-in-out infinite alternate;
-      animation: ball-r53 .425s ease-in-out infinite alternate;
-    }
-
-    .shadow-l {
-      -webkit-animation: shadow-l-n53 .425s ease-in-out infinite alternate;
-      animation: shadow-l-n53 .425s ease-in-out infinite alternate;
-    }
-
-    .shadow-r {
-      -webkit-animation: shadow-r-n53 .425s ease-in-out infinite alternate;
-      animation: shadow-r-n53 .425s ease-in-out infinite alternate;
-    }
-  </style>
+  <link rel="stylesheet" href="css/pata_nhi_kya_hai.css">
+  <link rel="stylesheet" href="css/minized_but_useless.css">
+  <link rel="stylesheet" href="css/self_added.css">
+  
 </head>
 
 <body>
   <main class="tmpl-sage-welcome">
-    <div class="gate disappearing_box" aria-hidden="false"><span class="gate__ring gate__ring--outer"></span><span
-        class="gate__ring gate__ring--inner"></span>
-      <div class="gate__center"><span class="gate__monogram" aria-hidden="true">S<span
-            class="gate__monogram-amp">&amp;</span>M</span>
-        <p class="gate__invited">You're Invited</p><button class="gate__seal"
-          aria-label="Open the wedding invitation"><span class="gate__seal-mark">✦</span><span
-            class="gate__seal-text">Tap to Open</span></button>
+    <!-- Gate overlay -->
+    <div class="gate " id="gateOverlay" aria-hidden="false">
+      <span class="gate__ring gate__ring--outer"></span>
+      <span class="gate__ring gate__ring--inner"></span>
+      <div class="gate__center">
+        <span class="gate__monogram" aria-hidden="true">S<span class="gate__monogram-amp">&amp;</span>M</span>
+        <p class="gate__invited">You're Invited</p>
+        <button class="gate__seal" id="gateSealBtn" aria-label="Open the wedding invitation">
+          <span class="gate__seal-mark">✦</span>
+          <span class="gate__seal-text">Tap to Open</span>
+        </button>
         <p class="gate__hint">Shariq &amp; Marium</p>
       </div>
     </div>
+
     <!-- Hero Section -->
     <section class="hero relative">
       <div class="hero__bg relative" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
-      <div class="hero__frame" aria-hidden="true"><span class="hero__corner hero__corner--tl"></span><span
-          class="hero__corner hero__corner--tr"></span><span class="hero__corner hero__corner--bl"></span><span
-          class="hero__corner hero__corner--br"></span></div>
+      <div class="hero__frame" aria-hidden="true">
+        <span class="hero__corner hero__corner--tl"></span>
+        <span class="hero__corner hero__corner--tr"></span>
+        <span class="hero__corner hero__corner--bl"></span>
+        <span class="hero__corner hero__corner--br"></span>
+      </div>
       <div class="hero__content relative h-screen flex flex-col items-center justify-center">
         <p class="eyebrow animate-fade-in-up">The Nikah Of</p>
         <h1 class="hero__names animate-fade-in-up animate-delay-1">
@@ -430,8 +85,11 @@
         <div class="divider animate-fade-in-up animate-delay-2"></div>
         <p class="scratch__hint animate-fade-in-up animate-delay-3">A special moment is waiting for you.</p>
         <div class="scratch__card animate-fade-in-up animate-delay-4">
-          <div class="scratch__reveal-content"><span class="scratch__day">Tuesday</span><span class="scratch__date">22
-              December 2026</span><span class="scratch__time">Ceremony at 5:00 PM</span></div>
+          <div class="scratch__reveal-content">
+            <span class="scratch__day">Tuesday</span>
+            <span class="scratch__date">22 December 2026</span>
+            <span class="scratch__time">Ceremony at 5:00 PM</span>
+          </div>
           <div class="scratch__canvas" hidden></div>
         </div>
         <p class="scratch__cta script animate-fade-in-up animate-delay-5">See you there!</p>
@@ -444,24 +102,8 @@
         <p class="eyebrow animate-fade-in-up">Little moments</p>
         <h2 class="gallery__title animate-fade-in-up animate-delay-1">From Our Story</h2>
         <div class="divider animate-fade-in-up animate-delay-2"></div>
-        <!-- <div class="gallery__frame animate-fade-in-up animate-delay-3">
-          <figure class="gallery__slide">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Ananya and Shubham">
-            <figcaption>The proposal, October 2024</figcaption>
-          </figure>
-        </div>
-        <div class="gallery__dots animate-fade-in-up animate-delay-4">
-          <button class="gallery__dot" aria-label="Gallery image 1"></button>
-          <button class="gallery__dot" aria-label="Gallery image 2"></button>
-          <button class="gallery__dot" aria-label="Gallery image 3"></button>
-          <button class="gallery__dot" aria-label="Gallery image 4"></button>
-        </div> -->
 
         <!-- From Uiverse.io by fox-tech0 -->
-
-
-
-
         <div class="container">
           <div class="swing">
             <div class="swing-l"></div>
@@ -499,12 +141,6 @@
             <span class="inline-block w-2 h-2 rounded-full bg-[#c9a15a] animate-pulse delay-300"></span>
           </div>
         </div>
-
-
-
-
-
-      </div>
       </div>
     </section>
 
@@ -637,28 +273,68 @@
 
   <script>
     (function () {
-      // Intersection Observer for animations on scroll
+      // ----- GATE TAP TO OPEN ANIMATION -----
+      const gate = document.getElementById('gateOverlay');
+      const sealBtn = document.getElementById('gateSealBtn');
+
+      // Function to trigger the opening animation
+      function openGate(e) {
+        // prevent double-tap / double-click from messing up
+        if (gate.classList.contains('gate--opening')) return;
+
+        // add the opening class to start the animation (clip-path circle shrink)
+        gate.classList.add('gate--opening');
+
+        // after the animation duration (1.3s), hide the gate so content below is clickable
+        setTimeout(() => {
+          gate.style.display = 'none';
+          gate.setAttribute('aria-hidden', 'true');
+        }, 1300); // matches transition duration in CSS (1.3s)
+      }
+
+      // Listen for click/tap on the seal button
+      sealBtn.addEventListener('click', function (e) {
+        e.stopPropagation(); // prevent bubbling to gate if needed
+        openGate(e);
+      });
+
+      // Also listen for click/tap on the gate itself (so clicking on the rings or background also works)
+      gate.addEventListener('click', function (e) {
+        // if the click target is the seal button, it's already handled above; we don't want double-trigger.
+        // but if user clicks on the gate background or rings, we want to open too.
+        // but we also need to prevent opening if user clicks on the seal button's child elements? 
+        // The seal button will stop propagation, so this gate click won't fire for clicks inside the button.
+        // However, clicking on the gate__center or rings will fire here.
+        openGate(e);
+      });
+
+      // (Optional) Also allow touch events for mobile
+      gate.addEventListener('touchstart', function (e) {
+        // we don't want to interfere with scroll, but gate is fixed so it's fine.
+        // the click event will handle it, but let's just ensure it works.
+        // We'll let click handle it.
+      }, { passive: true });
+
+      // ----- Intersection Observer for scroll animations -----
       const animatedElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in');
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-visible');
-            // Optionally unobserve after animation triggers
             observer.unobserve(entry.target);
           }
         });
       }, {
-        threshold: 0.15, // Trigger when 15% of the element is visible
-        rootMargin: '0px 0px -50px 0px' // Slight offset for better timing
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
       });
 
       animatedElements.forEach(el => {
         observer.observe(el);
       });
 
-      // Also handle elements that might already be in view on load
-      // Force a quick check after a small delay
+      // Also handle elements already in view on load
       setTimeout(() => {
         animatedElements.forEach(el => {
           const rect = el.getBoundingClientRect();

@@ -1,0 +1,350 @@
+ /* Keep existing custom styles */
+    .tmpl-sage-welcome .hero__scroll-arrow {
+      width: 38px;
+      height: 38px;
+      color: var(--rose-deep);
+      background: #fdfbf39e;
+      border: 1.5px solid #2f6b4f59;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      animation: 2.2s ease-in-out infinite sageScrollBob;
+      display: flex;
+    }
+
+    .disappearing_box{
+      scale:0;
+      animation: 2s ease-in-out disappear;
+    }
+
+    @keyframes disappear {
+      from {
+        scale: 1;
+      }
+
+      to {
+        scale: 0;
+      }
+    }
+
+    /* Fade-in animation utilities - initially hidden */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .animate-delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .animate-delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    .animate-delay-4 {
+      animation-delay: 0.8s;
+    }
+
+    .animate-delay-5 {
+      animation-delay: 1s;
+    }
+
+    .animate-delay-6 {
+      animation-delay: 1.2s;
+    }
+
+    /* Pause animation until element is in view */
+    .animate-fade-in-up,
+    .animate-fade-in {
+      animation-play-state: paused;
+    }
+
+    .animate-fade-in-up.animate-visible,
+    .animate-fade-in.animate-visible {
+      animation-play-state: running;
+    }
+
+    .container {
+      left: 50%;
+      margin: auto -50px;
+      position: absolute;
+      top: 50%;
+    }
+
+    .swing div {
+      border-radius: 50%;
+      float: left;
+      height: 1em;
+      width: 1em;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Left side – dark green to medium green */
+    .swing div:nth-of-type(1) {
+      background: #123524;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(2) {
+      background: #1a4d2e;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(3) {
+      background: #2d6a4f;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Middle ball – bridging color */
+    .swing div:nth-of-type(4) {
+      background: #6b8f5e;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Right side – gold to light gold */
+    .swing div:nth-of-type(5) {
+      background: #c9a15a;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(6) {
+      background: #dbb87a;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(7) {
+      background: #e4cd9c;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Hover effect for smooth color transition */
+    .swing:hover div:nth-of-type(1) {
+      background: #e4cd9c;
+    }
+
+    .swing:hover div:nth-of-type(2) {
+      background: #dbb87a;
+    }
+
+    .swing:hover div:nth-of-type(3) {
+      background: #c9a15a;
+    }
+
+    .swing:hover div:nth-of-type(4) {
+      background: #6b8f5e;
+    }
+
+    .swing:hover div:nth-of-type(5) {
+      background: #2d6a4f;
+    }
+
+    .swing:hover div:nth-of-type(6) {
+      background: #1a4d2e;
+    }
+
+    .swing:hover div:nth-of-type(7) {
+      background: #123524;
+    }
+
+    /* Shadow colors matching the balls */
+    .shadow {
+      clear: left;
+      padding-top: 1.5em;
+    }
+
+    .shadow div {
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      float: left;
+      width: 1em;
+      height: .25em;
+      border-radius: 50%;
+      background: #e3dbd2;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .shadow .shadow-l {
+      background: #123524;
+    }
+
+    .shadow .shadow-r {
+      background: #e4cd9c;
+    }
+
+    /* Shadow hover effect */
+    .swing:hover~.shadow .shadow-l {
+      background: #e4cd9c;
+    }
+
+    .swing:hover~.shadow .shadow-r {
+      background: #123524;
+    }
+
+    /* Keyframes – smooth animation timing */
+    @-webkit-keyframes ball-l53 {
+
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @keyframes ball-l53 {
+
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translate(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @-webkit-keyframes ball-r53 {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @keyframes ball-r53 {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @-webkit-keyframes shadow-l-n53 {
+
+      0%,
+      50% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      100% {
+        opacity: .125;
+        -webkit-transform: translateX(-1.57em);
+        transform: translateX(-1.75em);
+      }
+    }
+
+    @keyframes shadow-l-n53 {
+
+      0%,
+      50% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      100% {
+        opacity: .125;
+        -webkit-transform: translateX(-1.75);
+        transform: translateX(-1.75em);
+      }
+    }
+
+    @-webkit-keyframes shadow-r-n53 {
+      0% {
+        opacity: .125;
+        -webkit-transform: translateX(1.75em);
+        transform: translateX(1.75em);
+      }
+
+      50%,
+      100% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    /* layer utitlity error the shadow part */
+    @keyframes shadow-r-n53 {
+      0% {
+        opacity: .125;
+        -webkit-transform: translateX(1.75em);
+        transform: translateX(1.75em);
+      }
+
+      50%,
+      100% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    .swing-l {
+      -webkit-animation: ball-l53 .425s ease-in-out infinite alternate;
+      animation: ball-l53 .425s ease-in-out infinite alternate;
+    }
+
+    .swing-r {
+      -webkit-animation: ball-r53 .425s ease-in-out infinite alternate;
+      animation: ball-r53 .425s ease-in-out infinite alternate;
+    }
+
+    .shadow-l {
+      -webkit-animation: shadow-l-n53 .425s ease-in-out infinite alternate;
+      animation: shadow-l-n53 .425s ease-in-out infinite alternate;
+    }
+
+    .shadow-r {
+      -webkit-animation: shadow-r-n53 .425s ease-in-out infinite alternate;
+      animation: shadow-r-n53 .425s ease-in-out infinite alternate;
+    }
