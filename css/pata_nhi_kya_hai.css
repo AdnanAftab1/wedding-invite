@@ -6112,6 +6112,9 @@ html {
   position: fixed;
   inset: 0;
 }
+body.gate-locked {
+  overflow: hidden;
+}
 .tmpl-sage-welcome .gate--opening {
   clip-path: circle(0%);
   pointer-events: none;
@@ -6298,8 +6301,8 @@ html {
 }
 @media (max-width: 640px) {
   .tmpl-sage-welcome .gate__seal {
-    width: 108px;
-    height: 108px;
+    width: 112px;
+    height: 112px;
   }
 }
 .tmpl-sage-welcome .welcome__title {

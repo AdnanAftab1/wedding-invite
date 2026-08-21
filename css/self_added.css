@@ -12,6 +12,27 @@
       display: flex;
     }
 
+    .tmpl-sage-welcome .hero__ornament {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: min(92vw, 720px);
+      height: min(92vw, 720px);
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+      animation: sageOrnamentSpin 45s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sageOrnamentSpin {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
     .disappearing_box{
       scale:0;
       animation: 2s ease-in-out disappear;
@@ -178,12 +199,12 @@
     }
 
     /* Shadow colors matching the balls */
-    .shadow {
+    .swing-shadow {
       clear: left;
       padding-top: 1.5em;
     }
 
-    .shadow div {
+    .swing-shadow div {
       -webkit-filter: blur(1px);
       filter: blur(1px);
       float: left;
@@ -194,20 +215,20 @@
       transition: background 0.5s ease-in-out;
     }
 
-    .shadow .shadow-l {
+    .swing-shadow .swing-shadow-l {
       background: #123524;
     }
 
-    .shadow .shadow-r {
+    .swing-shadow .swing-shadow-r {
       background: #e4cd9c;
     }
 
     /* Shadow hover effect */
-    .swing:hover~.shadow .shadow-l {
+    .swing:hover~.swing-shadow .swing-shadow-l {
       background: #e4cd9c;
     }
 
-    .swing:hover~.shadow .shadow-r {
+    .swing:hover~.swing-shadow .swing-shadow-r {
       background: #123524;
     }
 
@@ -339,12 +360,12 @@
       animation: ball-r53 .425s ease-in-out infinite alternate;
     }
 
-    .shadow-l {
+    .swing-shadow-l {
       -webkit-animation: shadow-l-n53 .425s ease-in-out infinite alternate;
       animation: shadow-l-n53 .425s ease-in-out infinite alternate;
     }
 
-    .shadow-r {
+    .swing-shadow-r {
       -webkit-animation: shadow-r-n53 .425s ease-in-out infinite alternate;
       animation: shadow-r-n53 .425s ease-in-out infinite alternate;
     }
