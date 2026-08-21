@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whispering Leaves - Shariq &amp; Marium</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Alex+Brush&amp;family=Jost:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/0ubrz29dpqjgl.css">
+  <link rel="stylesheet" href="css/temp2_fixed.css">
+  <link rel="stylesheet" href="css/2h0cvub02ooc-.css">
+  <link rel="stylesheet" href="css/temp1_fixed.css">
+  <link rel="stylesheet" href="css/temp3_fixed.css">
+  <style>
+    /* Keep existing custom styles */
+    .tmpl-sage-welcome .hero__scroll-arrow {
+      width: 38px;
+      height: 38px;
+      color: var(--rose-deep);
+      background: #fdfbf39e;
+      border: 1.5px solid #2f6b4f59;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      animation: 2.2s ease-in-out infinite sageScrollBob;
+      display: flex;
+    }
+
+    .disappearing_box{
+      scale:0;
+      animation: 2s ease-in-out disappear;
+    }
+
+    @keyframes disappear {
+      from {
+        scale: 1;
+      }
+
+      to {
+        scale: 0;
+      }
+    }
+
+    /* Fade-in animation utilities - initially hidden */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .animate-delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .animate-delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    .animate-delay-4 {
+      animation-delay: 0.8s;
+    }
+
+    .animate-delay-5 {
+      animation-delay: 1s;
+    }
+
+    .animate-delay-6 {
+      animation-delay: 1.2s;
+    }
+
+    /* Pause animation until element is in view */
+    .animate-fade-in-up,
+    .animate-fade-in {
+      animation-play-state: paused;
+    }
+
+    .animate-fade-in-up.animate-visible,
+    .animate-fade-in.animate-visible {
+      animation-play-state: running;
+    }
+
+    .container {
+      left: 50%;
+      margin: auto -50px;
+      position: absolute;
+      top: 50%;
+    }
+
+    .swing div {
+      border-radius: 50%;
+      float: left;
+      height: 1em;
+      width: 1em;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Left side – dark green to medium green */
+    .swing div:nth-of-type(1) {
+      background: #123524;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(2) {
+      background: #1a4d2e;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(3) {
+      background: #2d6a4f;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Middle ball – bridging color */
+    .swing div:nth-of-type(4) {
+      background: #6b8f5e;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Right side – gold to light gold */
+    .swing div:nth-of-type(5) {
+      background: #c9a15a;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(6) {
+      background: #dbb87a;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .swing div:nth-of-type(7) {
+      background: #e4cd9c;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Hover effect for smooth color transition */
+    .swing:hover div:nth-of-type(1) {
+      background: #e4cd9c;
+    }
+
+    .swing:hover div:nth-of-type(2) {
+      background: #dbb87a;
+    }
+
+    .swing:hover div:nth-of-type(3) {
+      background: #c9a15a;
+    }
+
+    .swing:hover div:nth-of-type(4) {
+      background: #6b8f5e;
+    }
+
+    .swing:hover div:nth-of-type(5) {
+      background: #2d6a4f;
+    }
+
+    .swing:hover div:nth-of-type(6) {
+      background: #1a4d2e;
+    }
+
+    .swing:hover div:nth-of-type(7) {
+      background: #123524;
+    }
+
+    /* Shadow colors matching the balls */
+    .shadow {
+      clear: left;
+      padding-top: 1.5em;
+    }
+
+    .shadow div {
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      float: left;
+      width: 1em;
+      height: .25em;
+      border-radius: 50%;
+      background: #e3dbd2;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .shadow .shadow-l {
+      background: #123524;
+    }
+
+    .shadow .shadow-r {
+      background: #e4cd9c;
+    }
+
+    /* Shadow hover effect */
+    .swing:hover~.shadow .shadow-l {
+      background: #e4cd9c;
+    }
+
+    .swing:hover~.shadow .shadow-r {
+      background: #123524;
+    }
+
+    /* Keyframes – smooth animation timing */
+    @-webkit-keyframes ball-l53 {
+
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @keyframes ball-l53 {
+
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translate(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @-webkit-keyframes ball-r53 {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @keyframes ball-r53 {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @-webkit-keyframes shadow-l-n53 {
+
+      0%,
+      50% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      100% {
+        opacity: .125;
+        -webkit-transform: translateX(-1.57em);
+        transform: translateX(-1.75em);
+      }
+    }
+
+    @keyframes shadow-l-n53 {
+
+      0%,
+      50% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      100% {
+        opacity: .125;
+        -webkit-transform: translateX(-1.75);
+        transform: translateX(-1.75em);
+      }
+    }
+
+    @-webkit-keyframes shadow-r-n53 {
+      0% {
+        opacity: .125;
+        -webkit-transform: translateX(1.75em);
+        transform: translateX(1.75em);
+      }
+
+      50%,
+      100% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    /* layer utitlity error the shadow part */
+    @keyframes shadow-r-n53 {
+      0% {
+        opacity: .125;
+        -webkit-transform: translateX(1.75em);
+        transform: translateX(1.75em);
+      }
+
+      50%,
+      100% {
+        opacity: .5;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    .swing-l {
+      -webkit-animation: ball-l53 .425s ease-in-out infinite alternate;
+      animation: ball-l53 .425s ease-in-out infinite alternate;
+    }
+
+    .swing-r {
+      -webkit-animation: ball-r53 .425s ease-in-out infinite alternate;
+      animation: ball-r53 .425s ease-in-out infinite alternate;
+    }
+
+    .shadow-l {
+      -webkit-animation: shadow-l-n53 .425s ease-in-out infinite alternate;
+      animation: shadow-l-n53 .425s ease-in-out infinite alternate;
+    }
+
+    .shadow-r {
+      -webkit-animation: shadow-r-n53 .425s ease-in-out infinite alternate;
+      animation: shadow-r-n53 .425s ease-in-out infinite alternate;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="tmpl-sage-welcome">
+    <div class="gate disappearing_box" aria-hidden="false"><span class="gate__ring gate__ring--outer"></span><span
+        class="gate__ring gate__ring--inner"></span>
+      <div class="gate__center"><span class="gate__monogram" aria-hidden="true">S<span
+            class="gate__monogram-amp">&amp;</span>M</span>
+        <p class="gate__invited">You're Invited</p><button class="gate__seal"
+          aria-label="Open the wedding invitation"><span class="gate__seal-mark">✦</span><span
+            class="gate__seal-text">Tap to Open</span></button>
+        <p class="gate__hint">Shariq &amp; Marium</p>
+      </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero relative">
+      <div class="hero__bg relative" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__frame" aria-hidden="true"><span class="hero__corner hero__corner--tl"></span><span
+          class="hero__corner hero__corner--tr"></span><span class="hero__corner hero__corner--bl"></span><span
+          class="hero__corner hero__corner--br"></span></div>
+      <div class="hero__content relative h-screen flex flex-col items-center justify-center">
+        <p class="eyebrow animate-fade-in-up">The Nikah Of</p>
+        <h1 class="hero__names animate-fade-in-up animate-delay-1">
+          <span class="hero__name">Shariq</span>
+          <span class="hero__amp">&amp;</span>
+          <span class="hero__name">Marium</span>
+        </h1>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <a href="#welcome" type="button"
+          class="hero__scroll-hint absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-fade-in-up animate-delay-3"
+          aria-label="Scroll down to the rest of the invitation" style="opacity: 0.85;">
+          <span class="hero__scroll-label">Scroll</span>
+          <span class="hero__scroll-arrow" aria-hidden="true">
+            <svg width="14" height="9" viewBox="0 0 18 11" fill="none">
+              <path d="M1 1.5 9 9.5 17 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="section welcome">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">Welcome</p>
+        <h2 class="welcome__title animate-fade-in-up animate-delay-1">A Little Note From Us</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <p class="welcome__body animate-fade-in-up animate-delay-3">To be changed</p>
+      </div>
+    </section>
+
+    <!-- Scratch Section -->
+    <section class="section scratch">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">A little surprise</p>
+        <h2 class="scratch__title animate-fade-in-up animate-delay-1">Scratch to Reveal</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <p class="scratch__hint animate-fade-in-up animate-delay-3">A special moment is waiting for you.</p>
+        <div class="scratch__card animate-fade-in-up animate-delay-4">
+          <div class="scratch__reveal-content"><span class="scratch__day">Tuesday</span><span class="scratch__date">22
+              December 2026</span><span class="scratch__time">Ceremony at 5:00 PM</span></div>
+          <div class="scratch__canvas" hidden></div>
+        </div>
+        <p class="scratch__cta script animate-fade-in-up animate-delay-5">See you there!</p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">Little moments</p>
+        <h2 class="gallery__title animate-fade-in-up animate-delay-1">From Our Story</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <!-- <div class="gallery__frame animate-fade-in-up animate-delay-3">
+          <figure class="gallery__slide">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Ananya and Shubham">
+            <figcaption>The proposal, October 2024</figcaption>
+          </figure>
+        </div>
+        <div class="gallery__dots animate-fade-in-up animate-delay-4">
+          <button class="gallery__dot" aria-label="Gallery image 1"></button>
+          <button class="gallery__dot" aria-label="Gallery image 2"></button>
+          <button class="gallery__dot" aria-label="Gallery image 3"></button>
+          <button class="gallery__dot" aria-label="Gallery image 4"></button>
+        </div> -->
+
+        <!-- From Uiverse.io by fox-tech0 -->
+
+
+
+
+        <div class="container">
+          <div class="swing">
+            <div class="swing-l"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="swing-r"></div>
+          </div>
+          <div class="shadow">
+            <div class="shadow-l"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="shadow-r"></div>
+          </div>
+        </div>
+
+        <!-- Message with Tailwind styling -->
+        <div class="mt-8 text-center space-y-3">
+          <br><br><br>
+          <p class="font-display text-2xl text-[#23262b] tracking-wide">
+            Comeback after the wedding
+          </p>
+          <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#c9a15a] to-transparent mx-auto"></div>
+          <p class="text-sm text-[#8a8175] font-light tracking-wider uppercase">
+            We're getting ready for the big day
+          </p>
+          <div class="flex justify-center gap-2 mt-4">
+            <span class="inline-block w-2 h-2 rounded-full bg-[#c9a15a] animate-pulse"></span>
+            <span class="inline-block w-2 h-2 rounded-full bg-[#c9a15a] animate-pulse delay-150"></span>
+            <span class="inline-block w-2 h-2 rounded-full bg-[#c9a15a] animate-pulse delay-300"></span>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+      </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="section countdown">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">Until we say I do</p>
+        <h2 class="countdown__title animate-fade-in-up animate-delay-1">Counting down to forever</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <div class="countdown__grid animate-fade-in-up animate-delay-3">
+          <div class="countdown__unit">
+            <span class="countdown__value" id="days">124</span>
+            <span class="countdown__label">Days</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__value" id="hours">08</span>
+            <span class="countdown__label">Hours</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__value" id="minutes">42</span>
+            <span class="countdown__label">Minutes</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__value" id="seconds">18</span>
+            <span class="countdown__label">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        const targetDate = new Date('October 18, 2026 12:00:00').getTime();
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance < 0) {
+            daysEl.textContent = '00';
+            hoursEl.textContent = '00';
+            minutesEl.textContent = '00';
+            secondsEl.textContent = '00';
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(days).padStart(2, '0');
+          hoursEl.textContent = String(hours).padStart(2, '0');
+          minutesEl.textContent = String(minutes).padStart(2, '0');
+          secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      })();
+    </script>
+
+    <!-- Timeline Section -->
+    <section class="section timeline">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">The celebrations</p>
+        <h2 class="timeline__title animate-fade-in-up animate-delay-1">Join us for every moment</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <div class="timeline__list">
+          <div class="timeline__row animate-fade-in-up animate-delay-3">
+            <div class="timeline__mark"><span class="timeline__dot"></span><span class="timeline__line"></span></div>
+            <div class="timeline__body"><span class="timeline__when">20 December &middot; 9:00 AM</span>
+              <h3 class="timeline__event">Haldi</h3>
+              <p class="timeline__detail">A morning of turmeric, laughter and family at Sun Garden.</p>
+            </div>
+          </div>
+          <div class="timeline__row animate-fade-in-up animate-delay-4">
+            <div class="timeline__mark"><span class="timeline__dot"></span><span class="timeline__line"></span></div>
+            <div class="timeline__body"><span class="timeline__when">20 December &middot; 4:00 PM</span>
+              <h3 class="timeline__event">Mehendi</h3>
+              <p class="timeline__detail">Henna, music and mocktails on the Courtyard Lawn.</p>
+            </div>
+          </div>
+          <div class="timeline__row animate-fade-in-up animate-delay-5">
+            <div class="timeline__mark"><span class="timeline__dot"></span><span class="timeline__line"></span></div>
+            <div class="timeline__body"><span class="timeline__when">21 December &middot; 7:00 PM</span>
+              <h3 class="timeline__event">Sangeet</h3>
+              <p class="timeline__detail">An evening of dance and dinner in the Crystal Ballroom.</p>
+            </div>
+          </div>
+          <div class="timeline__row animate-fade-in-up animate-delay-6">
+            <div class="timeline__mark"><span class="timeline__dot"></span></div>
+            <div class="timeline__body"><span class="timeline__when">22 December &middot; 5:00 PM</span>
+              <h3 class="timeline__event">Wedding Ceremony</h3>
+              <p class="timeline__detail">The main event under the mandap at sunset, by the lake.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="section venue">
+      <div class="section-inner">
+        <p class="eyebrow animate-fade-in-up">Where to find us</p>
+        <h2 class="venue__title animate-fade-in-up animate-delay-1">The Venue</h2>
+        <div class="divider animate-fade-in-up animate-delay-2"></div>
+        <div class="venue__card animate-fade-in-up animate-delay-3">
+          <span class="venue__name">Elite Residency</span>
+          <span class="venue__address">Topsia ,Kolkata</span>
+          <a class="venue__button" href="https://maps.google.com/?q=Elite+Residency+Topsia" target="_blank"
+            rel="noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="section closing">
+      <div class="section-inner">
+        <span class="closing__heart animate-fade-in">&hearts;</span>
+        <h2 class="closing__title script animate-fade-in-up animate-delay-1">We can't wait to celebrate with you</h2>
+        <p class="closing__names eyebrow animate-fade-in-up animate-delay-2">Shariq &amp; Marium</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      // Intersection Observer for animations on scroll
+      const animatedElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-visible');
+            // Optionally unobserve after animation triggers
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15, // Trigger when 15% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Slight offset for better timing
+      });
+
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+
+      // Also handle elements that might already be in view on load
+      // Force a quick check after a small delay
+      setTimeout(() => {
+        animatedElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          if (rect.top < windowHeight - 100) {
+            el.classList.add('animate-visible');
+            observer.unobserve(el);
+          }
+        });
+      }, 100);
+    })();
+  </script>
+</body>
+
+</html>
