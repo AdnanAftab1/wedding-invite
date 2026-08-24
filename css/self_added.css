@@ -8,28 +8,40 @@
       border-radius: 50%;
       justify-content: center;
       align-items: center;
-      animation: 2.2s ease-in-out infinite sageScrollBob;
+      animation: 2.2s ease-in-out infinite bounce ;
       display: flex;
     }
 
-    .tmpl-sage-welcome .hero__ornament {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      width: min(92vw, 720px);
-      height: min(92vw, 720px);
-      transform: translate(-50%, -50%);
-      transform-origin: center;
-      animation: sageOrnamentSpin 45s linear infinite;
-      pointer-events: none;
-    }
+    @keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  } 
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+  
+  .tmpl-sage-welcome .hero__ornament {
+  --square-size: min(100vw, 100vh);
+  position: absolute;
+  top: calc(var(--square-size) * -0.5);
+  width: var(--square-size);
+  height: var(--square-size);
+  transform: translateX(-50%);
+  animation: 40s linear infinite sageOrnamentSpin;
+  pointer-events: none;
+  transform-origin: center center;
+}
 
     @keyframes sageOrnamentSpin {
       from {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform:  rotate(0deg);
       }
 
       to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform:  rotate(360deg);
       }
     }
 
